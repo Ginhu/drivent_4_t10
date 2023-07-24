@@ -119,7 +119,7 @@ describe('POST /bookings', () => {
         roomId: hotelRoom.id,
       });
 
-      expect(response.status).toEqual(httpStatus.PAYMENT_REQUIRED);
+      expect(response.status).toEqual(httpStatus.FORBIDDEN);
     });
 
     it('should respond with status 402 when user ticket is not paid ', async () => {
@@ -137,7 +137,7 @@ describe('POST /bookings', () => {
         roomId: hotelRoom.id,
       });
 
-      expect(response.status).toEqual(httpStatus.PAYMENT_REQUIRED);
+      expect(response.status).toEqual(httpStatus.FORBIDDEN);
     });
 
     it('should respond with status 402 when user ticket has no hotel ', async () => {
@@ -155,7 +155,7 @@ describe('POST /bookings', () => {
         roomId: hotelRoom.id,
       });
 
-      expect(response.status).toEqual(httpStatus.PAYMENT_REQUIRED);
+      expect(response.status).toEqual(httpStatus.FORBIDDEN);
     });
 
     it('should respond with status 404 when there is no enrollment ', async () => {
