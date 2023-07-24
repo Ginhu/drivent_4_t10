@@ -21,7 +21,6 @@ export async function createBooking(req: AuthenticatedRequest, res: Response) {
     return res.status(httpStatus.OK).send({ bookingId: booking.id });
   } catch (error) {
     if (error.name === 'NotFoundError') return res.sendStatus(httpStatus.NOT_FOUND);
-    if (error.name === 'CannotListHotelsError') return res.sendStatus(httpStatus.PAYMENT_REQUIRED);
     if (error.name === 'CannotFindRoomError') return res.sendStatus(httpStatus.NOT_FOUND);
     return res.sendStatus(httpStatus.FORBIDDEN);
   }
