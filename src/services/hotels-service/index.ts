@@ -37,4 +37,5 @@ async function getHotelsWithRooms(userId: number, hotelId: number) {
 export default {
   getHotels,
   getHotelsWithRooms,
+  listHotels,
 };
